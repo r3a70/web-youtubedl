@@ -1,0 +1,16 @@
+body{
+    background-color: rgb(33, 22, 33);
+    direction:rtl;
+    text-align: center;
+}
+div {
+    color: aliceblue;
+}
+p{
+    display: inline-block;
+    font-size: 20px;
+    padding: 0 20px;
+}
+span{
+    padding: 15px 0;
+}
