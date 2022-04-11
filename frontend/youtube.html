@@ -4,23 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/next-style.css">
     <title>YouTubeDownloaders</title>
     <style>
-        body{
-            background-color: rgb(33, 22, 33);
-            direction:rtl;
-        }
-        div {
-            color: aliceblue;
-        }
-        p{
-            display: inline-block;
-            font-size: 30px;
-            padding: 0 20px;
-        }
-        span{
-            padding: 15px 0;
-        }
+
     </style>
 </head>
 <body>
@@ -29,6 +16,11 @@
     </div>
     <div>
        <span> filesize: {{ info[1]['filesize'] }}</span> <p> url: <a href="{{info[1]['url']}}">Click for Download this format</a></p> <span> resolution: {{ info[1]['resolution'] }} </span>
+    </div>
+    <div class="back">
+        <form action="index.html">
+            <button>back page</button>
+        </form>
     </div>
 </body>
 </html>
