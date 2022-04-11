@@ -25,10 +25,10 @@
 </head>
 <body>
     <div>
-       <span> filesize: {{ info[0]['filesize'] }}</span> <p> url: <a href="{{info[0]['url']}}">Click for Download this format</a></p> <span> resolution: {{ info[0]['resolution'] }}</span>
+<!--       <span> filesize: {{ info[0]['filesize'] }}</span> <p> url: <a href="{{info[0]['url']}}">Click for Download this format</a></p> <span> resolution: {{ info[0]['resolution'] }}</span>-->
     </div>
     <div>
-       <span> filesize: {{ info[1]['filesize'] }}</span> <p> url: <a href="{{info[1]['url']}}">Click for Download this format</a></p> <span> resolution: {{ info[1]['resolution'] }} </span>
+       <span> filesize: {{ info[-1]['filesize'] }}</span> <p> url: <a href="{{info[-1]['url']}}">Click for Download this format</a></p> <span> resolution: {{ info[-1]['resolution'] }} </span>
     </div>
 </body>
 </html>
