@@ -13,7 +13,7 @@
 <body>
     {% for value in info %}
     <div>
-       <span> filesize: {{ value['filesiez'] }}</span> <p> url: <a href="{{value['url']}}">Click for Download this format</a></p> <span> resolution: {{ value['resolution'] }} </span>
+       <span> filesize: {{ value['filesize'] }}</span> <p> url: <a href="{{value['url']}}">Click for Download this format</a></p> <span> resolution: {{ value['resolution'] }} </span> <span> ext: {{ value['ext'] }}</span>
     </div>
     {% endfor %}
     <div class="back">
