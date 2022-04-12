@@ -13,4 +13,10 @@ async def yt_extractor(url):
             value['filesize'] = tools.human_bytes(value['filesize'])
             videos_list.append(value)
 
+    for index, value in enumerate(vid['formats']):
+        if value.get("audio_ext") != "none" and value.get("video_ext") == "none":
+            value['filesize'] = tools.human_bytes(value['filesize'])
+            videos_list.append(value)
+
     return videos_list
+
