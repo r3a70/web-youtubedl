@@ -9,7 +9,7 @@ app = FastAPI()
 app.include_router(youtube.router)
 
 templates = Jinja2Templates(directory="frontend")
-app.mount("/frontend/style/", StaticFiles(directory="frontend/style"), name="frontend")
+app.mount("/frontend/style", StaticFiles(directory="frontend/style"), name="static")
 
 
 @app.get("/", response_class=HTMLResponse)
