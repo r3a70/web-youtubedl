@@ -18,10 +18,16 @@
         </div>
     <div class="link-dow">
         <span class="size"><b>Size</b> {{ info[1]['filesize'] }}&nbsp; </span>  -  <p> <b class="url">URL</b> <a href="{{info[1]['url']}}">Download</a></p> -&nbsp;<span class="res"> <b>Resolution</b> {{ info[1]['resolution'] }} </span>
+    {% for value in info %}
+    <div>
+       <span> filesize: {{ value['filesize'] }}</span> <p> url: <a href="{{value['url']}}">Click for Download this format</a></p> <span> resolution: {{ value['resolution'] }} </span> <span> ext: {{ value['ext'] }}</span>
     </div>
+    {% endfor %}
     <div class="back">
         <form action="index.html">
             <button onclick="reset()"></button>
+        <form action="/">
+            <button>back page</button>
         </form>
     </div>
 </section>
