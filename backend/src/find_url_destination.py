@@ -2,7 +2,7 @@ import re
 
 
 async def find(url):
-    if re.search(r"""(.*youtube)""", url):
+    if re.search(r"""(.*youtube)|(.*youtu.be)""", url):
         return "youtube"
     elif re.search(r"""(.*tiktok)""", url):
         return "tiktok"
