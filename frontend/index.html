@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="{{ url_for('static', path='style.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', path='/style/style.css') }}" rel="stylesheet">
   <title>YouTube Downloader</title>
-    <link href="{{ url_for('static', path='style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/style/style.css') }}" rel="stylesheet">
 </head>
 <body>
   <div id="container">
   <div class="container">
  <h1><span> Get video information from YouTube</span></h1> 
-      <form action="youtube.html" method="get">
+      <form action="/api/v1/youtube/" method="get">
   <p>URL </p>
   <span class="input-text-logo"></span>
   <input type="text" name="url" placeholder= "Paste URL Here" size="15" required />
@@ -20,16 +20,6 @@
       </form>
   </div>
 </div>
-<script src="./js/main.js"></script>
-  </body>
-</html>
-
-  <center>  <h1> Get video information from YouTube & TikTok & Twitter</h1> </center>
-      <form action="/api/v1/youtube/" method="get">
-  <label> URL </label>
-  <input type="text" name="url" placeholder= "Paste url Here" size="15" required />
-  <button type="submit" class="registerbtn">Submit</button>
-      </form>
-  </div>
+<script src="{{ url_for('static', path='/js/main.js') }}"></script>
   </body>
 </html>
