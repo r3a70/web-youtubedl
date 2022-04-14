@@ -9,7 +9,7 @@ app = FastAPI()
 app.include_router(downloader.router)
 
 templates = Jinja2Templates(directory="frontend")
-app.mount("/frontend/style", StaticFiles(directory="frontend/style/"), name="static")
+app.mount("/frontend/", StaticFiles(directory="frontend/"), name="static")
 
 
 @app.get("/", response_class=HTMLResponse, status_code=status.HTTP_200_OK)

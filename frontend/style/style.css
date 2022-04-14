@@ -1,22 +1,93 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body{
     font-family: Calibri, Helvetica, sans-serif;
-    background-color: black;
+    background-image:  url(../img/19627.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    }
+    #container{
+      overflow: hidden;
     }
     .container {
-    padding: 100px;
-    background-color:  lightblue;
+    width: 90%;
+    margin: 200px auto;
+    position: relative;
     }
-    
+    .container h1{
+      text-align: center;
+      transform: translateY(-10px);
+      color: goldenrod;
+      font-size: 16px;
+    }
+    .container h1 span{
+      border-bottom: 1px solid goldenrod;
+      padding: 3px;
+    }
+    .container form{
+      text-align: center;
+    }
+    .container p{
+      padding: 0 10px;
+      font-size: 18px;
+      color: #f1f1f1;
+      animation: label 20s linear infinite;
+      text-align: left;
+      width: 100%;
+    }
+    @keyframes label{
+      1%,25%{
+        transform: scale(1);
+      }
+      25%,50%{
+        transform: scale(1) ;
+      }
+      50%,75%{
+        transform: scale(0) translateY(50px);
+      }
+      75%,85%{
+        transform: scale(1) translateX(70%);
+      }
+      85%,100%{
+        transform: translateX(0);
+      }
+    }
+    .container p::before{
+      content: url(../img/icons8-delete-link-28.png);
+      display: inline-block;
+      transform: translateY(8px);
+    }
+    .container .input-text-logo{
+      position: absolute;
+    }
+    .container .input-text-logo::before {
+      content: url(../img/icons8-download-48.png);
+      display: inline-block;
+      transform: translateY(12px);
+    }
+
     input[type=text] {
       width: 100%;
-      padding: 25px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-     border: none;
-     background: #f1f1f1;
+      padding:20px 25px 20px 55px;
+      margin: 5px 0 8px 0;
+      border: none;
+      background: #1b1b1b;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-family: inherit;
+      font-size: 18px;
+      color: #f1f1f1;
+
     }
     input[type=text]:focus {
-    background-color: gold;
+    box-shadow:0 0 10px 1px gold;
     outline: none;
     }
      div {
@@ -24,15 +95,57 @@ body{
     
     }
     .registerbtn {
-      background-color: #4CAF50;
+      background-color: #a82424;
       color: black;
-      padding: 20px 22px;
+      padding:0 0 15px 0;
+      margin: 20px;
+      border-radius: 8px;
       margin: 8px 0;
       border: none;
       cursor: pointer;
-      width: 100%;
-      opacity: 0.9;
+      width: 100px;
+      margin: 10px;
+      transition: 0.3;
     }
     .registerbtn:hover {
     opacity: 1;
+    background-color: #c41717;
     }
+    .registerbtn::after{
+      content: url(../img/icons8-right-arrow-26.png);
+      display: inline-block;
+      transform: translateY(10px) translateX(0);
+    }
+    .clock {
+      font-family: cursive;
+      color: goldenrod;
+      font-size: 12px;
+      position: absolute;
+      left: 2%;
+      top: 0;
+      font-weight: 900;
+    }
+    /*------------------ 540px ----------------------------------------------------------- */
+
+    @media screen and (min-width:540px) {
+      .container h1{
+      font-size: 24px;
+      transform: translateY(-40px);
+      }
+      .registerbtn {
+        padding:0 0 25px 0;
+
+        width: 140px;
+        margin: 10px;
+      }
+      .registerbtn::after{
+        content: url(../img/icons8-right-arrow-42.png);
+        display: inline-block;
+        transform: translateY(16px) translateX(0);
+      }
+      .clock {
+        font-size: 16px;
+        top: 1%;
+      }
+    }
+    
