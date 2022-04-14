@@ -122,8 +122,20 @@ body{
       font-size: 12px;
       position: absolute;
       left: 2%;
-      top: 0;
+      top: 1%;
       font-weight: 900;
+      box-shadow: 0 0 4px 1px rgb(255, 187, 0) inset;
+      padding: 8px;
+      border-radius: 4px;
+    }
+    .your_ip {
+      text-align: center;
+      color: goldenrod;
+      font-weight: 700;
+      background-color: rgba(0, 0, 0, 0.829);
+      width: 60%;
+      margin: auto;
+      border-radius: 4px;
     }
     /*------------------ 540px ----------------------------------------------------------- */
 
@@ -146,6 +158,9 @@ body{
       .clock {
         font-size: 16px;
         top: 1%;
+      }
+      .your_ip {
+        width: 35%;
       }
     }
     

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="{{ url_for('static', path='/style/style.css') }}" rel="stylesheet">
-  <title>YouTube Downloaders</title>
+  <title>YouTube Downloader</title>
     <link href="{{ url_for('static', path='/style/style.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -19,6 +19,9 @@
   <input type="text" name="url" placeholder= "Paste URL Here" size="15" required />
   <button type="submit" class="registerbtn"></button>
       </form>
+  </div>
+  <div class="your_ip">
+    <span>اینجا نشون بده ایپی رو</span>
   </div>
 </div>
 <script src="{{ url_for('static', path='/js/main.js') }}"></script>
