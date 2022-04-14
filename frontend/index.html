@@ -10,6 +10,7 @@
 </head>
 <body>
   <div id="container">
+      <div  id="MyClockDisplay" class="clock"></div>
   <div class="container">
  <h1><span> Get video information from YouTube</span></h1> 
       <form action="/api/v1/youtube/" method="get">
@@ -19,6 +20,10 @@
   <button type="submit" class="registerbtn"></button>
       </form>
   </div>
+  <div class="your_ip">
+    <span>اینجا نشون بده ایپی رو</span>
+  </div>
+
 </div>
 <script src="{{ url_for('static', path='/js/main.js') }}"></script>
   </body>
