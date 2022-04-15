@@ -30,6 +30,7 @@ async def read_item(request: Request, db: Session = Depends(database.get_db)):
         db.commit()
     views = db.query(models.Visit).all()
     downloads = db.query(models.Uses).all()
+    print(request.scope)
     return templates.TemplateResponse("index.html",
                                       {
                                           "request": request,
