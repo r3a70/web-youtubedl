@@ -1,7 +1,9 @@
-from fastapi import APIRouter, status, Request
+from fastapi import APIRouter, status, Request, Depends
 from backend.src import youtube_extractor, find_url_destination, tiktok_extractor, twitter_extractor
+from sqlalchemy.orm import Session
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
+from backend.db import models, database
 
 
 router = APIRouter(
@@ -14,7 +16,9 @@ templates = Jinja2Templates(directory="frontend")
 
 
 @router.get("/", status_code=status.HTTP_200_OK)
-async def download_from_youtube(url: str, request: Request):
+async def download_from_youtube(url: str, request: Request, db: Session = Depends(database.get_db)):
+
+    db_query = db.query(models.Uses).filter(models.Uses.urls == url).first()
 
     try:
         video_type = await find_url_destination.find(url)
@@ -30,7 +34,10 @@ async def download_from_youtube(url: str, request: Request):
             return RedirectResponse("/")
     except Exception:
         return RedirectResponse("/")
-
+    if not db_query:
+        new_uses = models.Uses(urls=url)
+        db.add(new_uses)
+        db.commit()
     return templates.TemplateResponse("youtube.html", {"request": request, "info": video_info})
 
 
