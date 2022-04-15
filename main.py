@@ -28,5 +28,12 @@ async def read_item(request: Request, db: Session = Depends(database.get_db)):
         new_visit = models.Visit(visited=ip)
         db.add(new_visit)
         db.commit()
-    return templates.TemplateResponse("index.html", {"request": request, "ip": ip})
-
+    views = db.query(models.Visit).all()
+    downloads = db.query(models.Uses).all()
+    return templates.TemplateResponse("index.html",
+                                      {
+                                          "request": request,
+                                          "ip": ip,
+                                          "views": len(views),
+                                          "downloads": len(downloads)
+                                      })
