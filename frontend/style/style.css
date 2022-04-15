@@ -1,7 +1,12 @@
+@font-face {
+  font-family: clock;
+  src: url(../font/babyfish\ regular.otf);
+}
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  list-style: none;
 }
 body{
     font-family: Calibri, Helvetica, sans-serif;
@@ -18,8 +23,10 @@ body{
     }
     .container {
     width: 90%;
-    margin: 200px auto;
+    margin: auto;
     position: relative;
+    transform: translateY(70px);  
+    height: 300px;
     }
     .container h1{
       text-align: center;
@@ -78,7 +85,7 @@ body{
       padding:20px 25px 20px 55px;
       margin: 5px 0 8px 0;
       border: none;
-      background: #1b1b1b;
+      background: #242424;
       border-radius: 8px;
       transition: 0.3s;
       font-family: inherit;
@@ -89,6 +96,8 @@ body{
     input[type=text]:focus {
     box-shadow:0 0 10px 1px gold;
     outline: none;
+    background: #1b1b1b;
+
     }
      div {
              padding: 10px 0;
@@ -105,7 +114,7 @@ body{
       cursor: pointer;
       width: 100px;
       margin: 10px;
-      transition: 0.3;
+      transition: 0.3s;
     }
     .registerbtn:hover {
     opacity: 1;
@@ -117,29 +126,61 @@ body{
       transform: translateY(10px) translateX(0);
     }
     .clock {
-      font-family: cursive;
-      color: goldenrod;
+      font-family: clock;
+      color: rgb(0, 225, 255);
       font-size: 12px;
-      position: absolute;
-      left: 2%;
-      top: 1%;
-      font-weight: 900;
-      box-shadow: 0 0 4px 1px rgb(255, 187, 0) inset;
+      width: 155px;
+      margin: auto;
+      /* font-weight: 900; */
+      box-shadow: 0 0 1px 2px rgb(0, 68, 255);
+      background-color: rgba(0, 0, 0, 0.733);
       padding: 8px;
       border-radius: 4px;
-    }
-    .your_ip {
       text-align: center;
-      color: goldenrod;
+      letter-spacing: 1px;
+    }
+    #your_ip {
+      color: rgb(255, 183, 0);
       font-weight: 700;
-      background-color: rgba(0, 0, 0, 0.829);
-      width: 60%;
+      width: 90%;
       margin: auto;
       border-radius: 4px;
+      transform: translateY(50px);
+      line-height: 270%;
+    }
+    #your_ip ul{
+      text-align: left;
+    }
+    #your_ip li{
+      font-size: 14px;
+    }
+    #your_ip .show-ip::before{
+      content: url(../img/icons8-web-address-34.png);
+      display: inline-block;
+      transform: translateY(12px) translateX(-5px);
+    }
+
+    #your_ip .show-day-seen::before{
+      content: url(../img/icons8-view-34.png);
+      display: inline-block;
+      transform: translateY(12px) translateX(-5px);
+    }
+    #your_ip .show-down::before{
+      content: url(../img/icons8-download-34.png);
+      display: inline-block;
+      transform: translateY(12px) translateX(-5px);
     }
     /*------------------ 540px ----------------------------------------------------------- */
 
     @media screen and (min-width:540px) {
+      #container{
+        position: relative;
+      }
+      .container {
+        width: 90%;
+        margin:200px auto;
+        
+      }
       .container h1{
       font-size: 24px;
       transform: translateY(-40px);
@@ -157,10 +198,38 @@ body{
       }
       .clock {
         font-size: 16px;
+        position: absolute;
         top: 1%;
+        right: 2%;
+        width: 200px;
       }
-      .your_ip {
-        width: 35%;
+
+      #your_ip {
+        position: absolute;
+        width: 70%;
+        transform: translateY(0);
+        margin: 0 0 0 20px;
+        top: 0;
+        left: 0;
+      }
+      #your_ip li{
+        font-size: 18px;
+      }
+      #your_ip .show-ip::before{
+        content: url(../img/icons8-web-address-42.png);
+        display: inline-block;
+        transform: translateY(15px) translateX(-5px);
+      }
+  
+      #your_ip .show-day-seen::before{
+        content: url(../img/icons8-view-42.png);
+        display: inline-block;
+        transform: translateY(15px) translateX(-5px);
+      }
+      #your_ip .show-down::before{
+        content: url(../img/icons8-download-42.png);
+        display: inline-block;
+        transform: translateY(15px) translateX(-5px);
       }
     }
     
