@@ -11,6 +11,13 @@
 <body>
   <div id="container">
       <div  id="MyClockDisplay" class="clock"></div>
+      <div id="your_ip">
+        <ul>
+          <li class="show-ip">Your IP : </li>
+          <li class="show-day-seen">Day Seen : </li>
+          <li class="show-down">All Download : </li>
+        </ul>
+      </div>
   <div class="container">
  <h1><span> Get video information from YouTube</span></h1>
       <form action="/api/v1/youtube/" method="get">
@@ -20,7 +27,6 @@
   <button type="submit" class="registerbtn"></button>
       </form>
   </div>
-<!--            <h1><span> ip  </span> {{ ip }} </h1>-->
 </div>
 <script src="{{ url_for('static', path='/js/main.js') }}"></script>
   </body>
